@@ -2,7 +2,11 @@ import processing.core.PApplet;
 
 public class Sketch extends PApplet {
 	
-	
+	float score = (random(100));
+  float randomNum;
+  float sunX;
+  float sunY;
+
   /**
    * Called once at the beginning of execution, put your size all in this method
    */
@@ -16,8 +20,33 @@ public class Sketch extends PApplet {
  * values here i.e background, stroke, fill etc.
  */
 public void setup() {
-  background(135, 206, 235);
-}
+  sunX = random(0, 400);
+  sunY = random(0,150);
+
+ //random if statements
+  randomNum = random(0,100);
+  if (score >= 50) {
+    background(140,90,2);
+    text("horse",200,100);
+  }
+  else {
+    background(520,0,10);
+    text("HORSE",200,100);
+  }
+
+  fill(random(150),random(75),random(0));
+
+  }
+
+
+
+
+
+  
+  
+  //random color horse
+ 
+
 
 /**
  * Called repeatedly, anything drawn to the screen goes here
@@ -26,20 +55,20 @@ public void draw() {
  
   
 //ear
-fill(150,75,0);
+
 triangle(450,700,475,600,500,700);
 
 
 
 
 // Horse head
-fill(150,75,0);
+
 ellipse(400,700,200,75); 
    
 
 
 // horse body
-fill(150,75,0);
+
 rect(470,730,400,75); 
 
 // horse legs
@@ -73,7 +102,7 @@ line(870,770,900,860);
 
 //sun
 fill(255,255,0);
-ellipse(75,75,200,200);
+ellipse(sunX,sunY,200,200);
 
 
 //time variable
@@ -86,6 +115,10 @@ fill(255,165,0);
 textSize(100);
 text(hours, 100, 150);
 text(minutes, 250, 150);
+
+
+
+
 
 }
 }
